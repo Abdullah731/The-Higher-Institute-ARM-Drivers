@@ -90,7 +90,8 @@ void EXTI0_IRQHandler(void)
 {
 	if(Global_pvEXTI0NotificationFunction != NULL)
 	{
-		Global_pvEXTI0NotificationFunction();	
+		Global_pvEXTI0NotificationFunction();
+		SET_BIT( EXTI -> PR, 0);
 	}
 	else
 	{
